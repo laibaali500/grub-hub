@@ -27,14 +27,6 @@ function MainContent({places}) {
 
   return (
     <Box sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}>
-      <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
-        <Toolbar>
-          <Typography variant="h6" noWrap component="div">
-            App Title
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Toolbar />
       <Grid container spacing={3} sx={{ mb: 2 }}>
         <Grid item xs={12} sm={6} md={3}>
           <Dropdown label="Dropdown 1" value={dropdown1} onChange={handleChange1} />
