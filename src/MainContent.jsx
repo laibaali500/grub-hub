@@ -4,10 +4,15 @@ import Dropdown from './Dropdown';
 import PlaceCard from './PlaceCard';
 
 function MainContent({places}) {
-  const [dropdown1, setDropdown1] = React.useState('');
-  const [dropdown2, setDropdown2] = React.useState('');
-  const [dropdown3, setDropdown3] = React.useState('');
-  const [dropdown4, setDropdown4] = React.useState('');
+  const locationDropdownOptions = ["6PS", "CSG"]
+  const distanceDropdownOptions = ["< 1km", "< 5km", "< 10km"]
+  const partySizeDropdownOptions = ["Any", "Small (1-10 ppl)", "Medium (10-25 ppl)", "Large (25+ ppl)"]
+  const dietaryRequirementsDropdownOptions = ["None", "Vegetarian", "Vegan", "Halal"]
+
+  const [dropdown1, setDropdown1] = React.useState(locationDropdownOptions.at(0));
+  const [dropdown2, setDropdown2] = React.useState(distanceDropdownOptions.at(0));
+  const [dropdown3, setDropdown3] = React.useState(partySizeDropdownOptions.at(0));
+  const [dropdown4, setDropdown4] = React.useState(dietaryRequirementsDropdownOptions.at(0));
 
   const handleChange1 = (event) => {
     setDropdown1(event.target.value);
@@ -37,16 +42,16 @@ function MainContent({places}) {
       <Toolbar />
       <Grid container spacing={3} sx={{ mb: 2 }}>
         <Grid item xs={12} sm={6} md={3}>
-          <Dropdown label="Dropdown 1" value={dropdown1} onChange={handleChange1} />
+          <Dropdown label="Location" value={dropdown1} onChange={handleChange1} options={locationDropdownOptions} />
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
-          <Dropdown label="Dropdown 2" value={dropdown2} onChange={handleChange2} />
+          <Dropdown label="Distance" value={dropdown2} onChange={handleChange2} options={distanceDropdownOptions} />
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
-          <Dropdown label="Dropdown 3" value={dropdown3} onChange={handleChange3} />
+          <Dropdown label="Party Size" value={dropdown3} onChange={handleChange3} options={partySizeDropdownOptions} />
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
-          <Dropdown label="Dropdown 4" value={dropdown4} onChange={handleChange4} />
+          <Dropdown label="Dietary Requirements" value={dropdown4} onChange={handleChange4} options={dietaryRequirementsDropdownOptions} />
         </Grid>
       </Grid>
       <Grid container spacing={3}>
