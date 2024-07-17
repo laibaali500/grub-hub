@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, AppBar, Toolbar, Typography, Grid } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import Dropdown from './Dropdown';
 import PlaceCard from './PlaceCard';
 
@@ -49,7 +49,7 @@ function MainContent({places}) {
       <Grid container spacing={3}>
         {places.map((item) => (
           <Grid item xs={12} sm={6} md={4} key={item}>
-            <PlaceCard item={item.name} />
+            <PlaceCard item={item} />
           </Grid>
         ))}
       </Grid>

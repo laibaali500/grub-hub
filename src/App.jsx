@@ -1,14 +1,7 @@
 import React from 'react';
-import { CssBaseline, Drawer, Toolbar, Box, List, ListItem, ListItemText, AppBar, Typography, } from '@mui/material';
-import MainContent from './MainContent';
-import { useEffect, useState } from "react";
-import { createClient } from "@supabase/supabase-js";
+import { CssBaseline, Drawer, Toolbar, Box, AppBar, Typography, } from '@mui/material';
 import './App.css'
 import { Outlet, Link, useLocation } from 'react-router-dom'
-
-const apiUrl = import.meta.env.VITE_SUPABASE_URL; 
-const apiKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-const supabase = createClient(apiUrl, apiKey);
 
 const drawerWidth = 240;
 

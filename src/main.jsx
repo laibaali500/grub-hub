@@ -1,4 +1,3 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
@@ -9,8 +8,11 @@ import { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import Activities from './Pages/ActivitiesPage.jsx'
 import Events from './Pages/EventsPage.jsx'
+import Place from './Pages/PlacePage.jsx'
 
-const supabase = createClient("https://hzdomlyyawwtdzjwyuhm.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh6ZG9tbHl5YXd3dGR6and5dWhtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjEwNDkyMzIsImV4cCI6MjAzNjYyNTIzMn0.6cRGc98kbTT2DxeI_qG-K7iRf6Uw2WeTaPtgqRXFQqk");
+const apiUrl = import.meta.env.VITE_SUPABASE_URL; 
+const apiKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+const supabase = createClient(apiUrl, apiKey);
 
 export default function Main(){
   const [foodPlaces, setFoodPlaces] = useState([]);
@@ -32,6 +34,7 @@ export default function Main(){
         <Route path="food" element={<Food />} />
         <Route path="activities" element={<Activities />} />
         <Route path="events" element={<Events />} />
+        <Route path="place/:placeId" element={<Place places={foodPlaces}/>} />
       </Route>
     </Routes>
     </BrowserRouter>
