@@ -1,14 +1,11 @@
 import { useParams } from 'react-router-dom';
 import { Box, Card, Typography ,CardContent } from '@mui/material';
+import GoogleMapsComponent from '../GoogleMapsComponent';
+import PlaceInfoRetriever from '../PlaceInfoRetriever';
 
 function Place({places}) {
   const { placeId } = useParams();
   const thisPlace = places.at(placeId - 1)
-    // return (
-    //   <div>
-    //     <h1>{thisPlace.name}</h1>
-    //   </div>
-    // );
     return (
       <Box sx={{ p: 3 }}>
       <Card>
@@ -17,9 +14,10 @@ function Place({places}) {
             {thisPlace.name}
           </Typography>
           <Typography variant="body1">
-            <strong>Address:</strong> {thisPlace.location}
+            <strong>Address:</strong> <PlaceInfoRetriever placeId={thisPlace.placeId} />
           </Typography>
         </CardContent>
+        <GoogleMapsComponent placeId={thisPlace.placeId}/>
       </Card>
     </Box>
     )
