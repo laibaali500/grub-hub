@@ -14,10 +14,10 @@ function Place({places}) {
             {thisPlace.name}
           </Typography>
           <Typography variant="body1">
-            <strong>Address:</strong> <PlaceInfoRetriever placeId={thisPlace.placeId} />
+            <strong>Address:</strong> <PlaceInfoRetriever placeId={thisPlace.placeid} />
           </Typography>
         </CardContent>
-        <GoogleMapsComponent placeId={thisPlace.placeId}/>
+        <GoogleMapsComponent placeId={thisPlace.placeid}/>
       </Card>
     </Box>
     )

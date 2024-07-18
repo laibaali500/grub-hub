@@ -83,7 +83,7 @@ function MainContent({places}) {
       </Grid>
       <Grid container spacing={3}>
         {places.map((item) => (
-          <Grid item xs={12} sm={6} md={4} key={item}>
+          <Grid item xs={12} sm={6} md={4} key={item.id}>
             <PlaceCard item={item} />
           </Grid>
         ))}

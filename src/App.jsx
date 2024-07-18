@@ -36,8 +36,9 @@ function App() {
           <nav>
               <ul>
                 <Link to="/food">Food</Link> <br/>
-                <Link to ="/activities">Activities</Link> <br/>
-                <Link to="/events">Events</Link> <br/>
+                <Link to ="/drinks">Drinks</Link> <br/>
+                <Link to="/activities">Activities</Link> <br/>
+                <Link to="/celebrate">Celebrate</Link> <br/>
               </ul>
           </nav>
         </Box>
