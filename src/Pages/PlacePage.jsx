@@ -14,7 +14,7 @@ function Place({places}) {
             {thisPlace.name}
           </Typography>
           <Typography variant="body1">
-            <strong>Address:</strong> <PlaceInfoRetriever placeId={thisPlace.placeid} />
+            <strong>Address:</strong> <PlaceInfoRetriever placeId={thisPlace.placeid} dataType={"address"} />
           </Typography>
         </CardContent>
         <GoogleMapsComponent placeId={thisPlace.placeid}/>

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Box, Grid, Chip } from '@mui/material';
+import { useEffect, useState } from 'react';
+import { Box, Grid, Chip, Typography } from '@mui/material';
 import Dropdown from './Dropdown';
 import PlaceCard from './PlaceCard';
 
@@ -8,19 +9,19 @@ function MainContent({places}) {
   const distanceDropdownOptions = ["< 1km", "< 5km", "< 10km"]
   const partySizeDropdownOptions = ["Any", "Small (1-10 ppl)", "Medium (10-25 ppl)", "Large (25+ ppl)"]
   const availiabilityDropdownOptions  = ["Dine-in", "Private room available", "Outdoor seating"]
-  const priceDropdownOptions = ["< £15pp", "< £30pp", "< £50pp", "< £100pp", "£100+pp"]
+  const priceDropdownOptions = ["1: Inexpensive", "2: Moderate", "3: Expensive", "4: Very Expensive"]
   const dietaryRequirementsChipOptions = [
     { label: "Vegetarian", selected: false },
     { label: "Vegan", selected: false },
     { label: "Halal", selected: false },
   ];
 
-  const [dropdown1, setDropdown1] = React.useState(locationDropdownOptions.at(0));
-  const [dropdown2, setDropdown2] = React.useState(distanceDropdownOptions.at(0));
-  const [dropdown3, setDropdown3] = React.useState(partySizeDropdownOptions.at(0));
-  const [dropdown4, setDropdown4] = React.useState(availiabilityDropdownOptions.at(0));
-  const [dropdown5, setDropdown5] = React.useState(priceDropdownOptions.at(0));
-  const [dietaryRequirements, setDietaryRequirements] = React.useState(dietaryRequirementsChipOptions);
+  const [dropdown1, setDropdown1] = useState(locationDropdownOptions.at(0));
+  const [dropdown2, setDropdown2] = useState(distanceDropdownOptions.at(0));
+  const [dropdown3, setDropdown3] = useState(partySizeDropdownOptions.at(0));
+  const [dropdown4, setDropdown4] = useState(availiabilityDropdownOptions.at(0));
+  const [dropdown5, setDropdown5] = useState(priceDropdownOptions.at(0));
+  const [dietaryRequirements, setDietaryRequirements] = useState(dietaryRequirementsChipOptions);
 
   const handleChange1 = (event) => {
     setDropdown1(event.target.value);

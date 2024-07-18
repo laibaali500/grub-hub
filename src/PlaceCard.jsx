@@ -1,16 +1,16 @@
 import React from 'react';
 import { Card, CardMedia, CardContent, CardActions, Typography, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
+import PlaceInfoRetriever from './PlaceInfoRetriever';
+
+
 
 function PlaceCard({ item }) {
   return (
     <Card>
-      <CardMedia
-        component="img"
-        height="140"
-        image={`https://via.placeholder.com/150?text=Image+${item.name}`}
-        alt={`Image ${item.name}`}
-      />
+      <CardMedia style={{ height: 200 }}>
+        <PlaceInfoRetriever placeId={item.placeid} dataType={'photo'}/>
+      </CardMedia>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {item.name}
